@@ -2,7 +2,7 @@
 
 namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin;
 
-use Spryker\Glue\GlueApplication\ApiApplication\ApiApplicationContext; //@todo move application context into extension
+use Spryker\Glue\GlueApplication\ApiApplication\ApiApplicationContext;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ApiApplicationPluginInterface;
 use Spryker\Glue\Kernel\AbstractPlugin;
 use Spryker\Glue\Kernel\Container;
@@ -19,7 +19,12 @@ class GlueStorefrontApiApplicationPlugin extends AbstractPlugin implements ApiAp
      */
     public function isServing(ApiApplicationContext $apiApplicationContext): bool
     {
-        return true;
+        $isGlueHost = (
+            $apiApplicationContext->has('host')
+            && preg_match('/glue/', $apiApplicationContext->get('host')) > 0
+        );
+
+        return $isGlueHost;
     }
 
     /**

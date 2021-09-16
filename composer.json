@@ -1,7 +1,7 @@
 {
-    "name": "spryker/glue-application-extension",
+    "name": "spryker/glue-storefront-api-application",
     "type": "library",
-    "description": "GlueApplicationExtension module",
+    "description": "GlueStorefrontApiApplication module",
     "license": "proprietary",
     "require": {
         "php": ">=7.3"
