@@ -16,7 +16,7 @@ use Spryker\Glue\Kernel\Container;
 class GlueStorefrontApiApplicationFactory extends AbstractFactory
 {
     /**
-     * @return Container
+     * @return \Spryker\Glue\Kernel\Container
      */
     public function getDependencyContainer(): Container
     {
