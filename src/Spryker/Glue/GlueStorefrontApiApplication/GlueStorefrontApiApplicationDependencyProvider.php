@@ -10,6 +10,9 @@ namespace Spryker\Glue\GlueStorefrontApiApplication;
 use Spryker\Glue\EventDispatcher\Plugin\Application\EventDispatcherApplicationPlugin;
 use Spryker\Glue\GlueApplication\GlueApplicationDependencyProvider;
 use Spryker\Glue\GlueApplication\Plugin\Application\GlueApplicationApplicationPlugin;
+use Spryker\Glue\GlueJsonApi\Plugin\RouteRequestMatcherPlugin;
+use Spryker\Glue\GlueJsonApiExtension\Dependency\Plugin\ResourceRoutePluginInterface;
+use Spryker\Glue\HelloStorefrontRestApi\Plugin\GlueApplication\HelloStorefrontResourceRoutePlugin;
 use Spryker\Glue\Http\Plugin\Application\HttpApplicationPlugin;
 use Spryker\Glue\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Glue\Kernel\Container;
@@ -22,11 +25,12 @@ use Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInter
  */
 class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDependencyProvider
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     public const PLUGIN_RESOURCE_ROUTES = 'PLUGIN_RESOURCE_ROUTES';
+    /** @var string */
     public const PLUGIN_APPLICATIONS = 'PLUGIN_APPLICATIONS';
+    /** @var string */
+    public const PLUGIN_REQUEST_MATCHER = 'PLUGIN_REQUEST_MATCHER';
 
     /**
      * @param Container $container
@@ -37,6 +41,7 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         $container = parent::provideDependencies($container);
         $container = $this->addApplicationPlugins($container);
         $container = $this->addResourceRoutePlugins($container);
+        $container = $this->addRequestMatcherPlugin($container);
 
         return $container;
     }
@@ -58,11 +63,13 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
     /**
      * Rest resource route plugin stack
      *
-     * @return \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRoutePluginInterface[]
+     * @return ResourceRoutePluginInterface
      */
     protected function getResourceRoutePlugins(): array
     {
-        return [];
+        return [
+            new HelloStorefrontResourceRoutePlugin(), //@todo wiring should happen on project level
+        ];
     }
 
     /**
@@ -84,6 +91,7 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
      */
     protected function getApplicationPlugins()
     {
+        //@todo wiring should happen in the project. Also most plugins are probably not necessary
         return [
             new HttpApplicationPlugin(),
             new SessionApplicationPlugin(),
@@ -91,5 +99,19 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
             new GlueApplicationApplicationPlugin(),
             new RouterApplicationPlugin(),
         ];
+    }
+
+    /**
+     * @param Container $container
+     *
+     * @return Container
+     */
+    protected function addRequestMatcherPlugin(Container $container)
+    {
+        $container->set(static::PLUGIN_REQUEST_MATCHER, function () {
+            return new RouteRequestMatcherPlugin($this->getResourceRoutePlugins());
+        });
+
+        return $container;
     }
 }
