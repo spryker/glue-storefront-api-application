@@ -10,7 +10,7 @@ namespace Spryker\Glue\GlueStorefrontApiApplication;
 use Spryker\Glue\EventDispatcher\Plugin\Application\EventDispatcherApplicationPlugin;
 use Spryker\Glue\GlueApplication\GlueApplicationDependencyProvider;
 use Spryker\Glue\GlueApplication\Plugin\Application\GlueApplicationApplicationPlugin;
-use Spryker\Glue\GlueJsonApi\Plugin\RouteRequestMatcherPlugin;
+use Spryker\Glue\JsonApiConvention\Plugin\RouteRequestMatcherPlugin;
 use Spryker\Glue\GlueJsonApiExtension\Dependency\Plugin\ResourceRoutePluginInterface;
 use Spryker\Glue\HelloStorefrontRestApi\Plugin\GlueApplication\HelloStorefrontResourceRoutePlugin;
 use Spryker\Glue\Http\Plugin\Application\HttpApplicationPlugin;

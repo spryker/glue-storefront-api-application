@@ -7,7 +7,7 @@
 
 namespace Spryker\Glue\GlueStorefrontApiApplication;
 
-use Spryker\Glue\GlueJsonApi\Plugin\RouteRequestMatcherPlugin;
+use Spryker\Glue\JsonApiConvention\Plugin\RouteRequestMatcherPlugin;
 use Spryker\Glue\Kernel\AbstractFactory;
 use Spryker\Glue\Kernel\Container;
 
