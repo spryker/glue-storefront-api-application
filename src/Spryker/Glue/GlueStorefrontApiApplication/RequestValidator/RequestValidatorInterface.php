@@ -11,7 +11,7 @@ use Generated\Shared\Transfer\GlueRequestTransfer;
 use Generated\Shared\Transfer\GlueRequestValidationTransfer;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceInterface;
 
-interface RequestCorsValidatorInterface
+interface RequestValidatorInterface
 {
     /**
      * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
