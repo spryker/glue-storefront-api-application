@@ -5,11 +5,11 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueStorefrontApiApplication;
+namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication;
 
 use Generated\Shared\Transfer\GlueRequestTransfer;
 use Generated\Shared\Transfer\GlueResponseTransfer;
-use Spryker\Glue\GlueStorefrontApiApplicationExtension\Dependency\Plugin\ResponseFormatterPluginInterface;
+use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResponseFormatterPluginInterface;
 use Spryker\Glue\Kernel\AbstractPlugin;
 
 /**

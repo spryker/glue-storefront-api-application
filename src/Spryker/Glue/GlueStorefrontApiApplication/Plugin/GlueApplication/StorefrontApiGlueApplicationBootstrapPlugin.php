@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin;
+namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication;
 
 use Generated\Shared\Transfer\GlueApiContextTransfer;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\GlueApplicationBootstrapPluginInterface;

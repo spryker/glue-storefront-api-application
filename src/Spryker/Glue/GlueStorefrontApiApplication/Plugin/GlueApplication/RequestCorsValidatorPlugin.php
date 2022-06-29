@@ -5,12 +5,12 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueStorefrontApiApplication;
+namespace Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication;
 
 use Generated\Shared\Transfer\GlueRequestTransfer;
 use Generated\Shared\Transfer\GlueRequestValidationTransfer;
+use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\RequestAfterRoutingValidatorPluginInterface;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceInterface;
-use Spryker\Glue\GlueStorefrontApiApplicationExtension\Dependency\Plugin\RequestAfterRoutingValidatorPluginInterface;
 use Spryker\Glue\Kernel\AbstractPlugin;
 
 /**
@@ -31,7 +31,7 @@ class RequestCorsValidatorPlugin extends AbstractPlugin implements RequestAfterR
      *
      * @return \Generated\Shared\Transfer\GlueRequestValidationTransfer
      */
-    public function validateRequest(GlueRequestTransfer $glueRequestTransfer, ResourceInterface $resource): GlueRequestValidationTransfer
+    public function validate(GlueRequestTransfer $glueRequestTransfer, ResourceInterface $resource): GlueRequestValidationTransfer
     {
         return $this->getFactory()->createRequestCorsValidator()->validate(
             $glueRequestTransfer,
