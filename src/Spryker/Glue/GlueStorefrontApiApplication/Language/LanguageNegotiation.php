@@ -66,7 +66,7 @@ class LanguageNegotiation implements LanguageNegotiationInterface
     }
 
     /**
-     * @param list<string> $localeCodes
+     * @param array<string> $localeCodes
      *
      * @return array<string, string>
      */
