@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Glue\GlueStorefrontApiApplication\LanguageNegotiation;
+namespace SprykerTest\Glue\GlueStorefrontApiApplication\Language;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\AcceptLanguageTransfer;
@@ -22,7 +22,7 @@ use SprykerTest\Glue\GlueStorefrontApiApplication\GlueStorefrontApiApplicationTe
  * @group SprykerTest
  * @group Glue
  * @group GlueStorefrontApiApplication
- * @group LanguageNegotiation
+ * @group Language
  * @group LanguageNegotiationTest
  * Add your own group annotations below this line
  */
