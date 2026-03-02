@@ -22,19 +22,11 @@ class LocaleRequestBuilder implements LocaleRequestBuilderInterface
      */
     protected $languageNegotiation;
 
-    /**
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\Language\LanguageNegotiationInterface $languageNegotiation
-     */
     public function __construct(LanguageNegotiationInterface $languageNegotiation)
     {
         $this->languageNegotiation = $languageNegotiation;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueRequestTransfer
-     */
     public function extract(GlueRequestTransfer $glueRequestTransfer): GlueRequestTransfer
     {
         if (isset($glueRequestTransfer->getMeta()[static::HEADER_ACCEPT_LANGUAGE])) {

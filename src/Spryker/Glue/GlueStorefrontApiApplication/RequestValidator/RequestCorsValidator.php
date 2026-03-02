@@ -49,20 +49,11 @@ class RequestCorsValidator implements RequestValidatorInterface
 
     protected GlueStorefrontApiApplicationConfig $config;
 
-    /**
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\GlueStorefrontApiApplicationConfig $config
-     */
     public function __construct(GlueStorefrontApiApplicationConfig $config)
     {
         $this->config = $config;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     * @param \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\GlueRequestValidationTransfer
-     */
     public function validate(
         GlueRequestTransfer $glueRequestTransfer,
         ResourceInterface $resource

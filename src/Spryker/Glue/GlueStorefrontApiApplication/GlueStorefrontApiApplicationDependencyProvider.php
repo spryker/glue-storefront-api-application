@@ -68,11 +68,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
      */
     public const SERVICE_LOCALE = 'SERVICE_LOCALE';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -90,11 +85,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addApplicationPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_APPLICATIONS, function () {
@@ -112,11 +102,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addResourcePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_RESOURCE, function () {
@@ -134,11 +119,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addRequestBuilderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_REQUEST_BUILDER, function () {
@@ -156,11 +136,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addRequestValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_REQUEST_VALIDATOR, function () {
@@ -178,11 +153,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addRequestAfterRoutingValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_REQUEST_AFTER_ROUTING_VALIDATOR, function () {
@@ -200,11 +170,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addResponseFormatterPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_RESPONSE_FORMATTER, function () {
@@ -222,11 +187,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addStoreClient(Container $container): Container
     {
         $container->set(static::CLIENT_STORE, function (Container $container) {
@@ -236,11 +196,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addRouteProviderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_ROUTE_PROVIDER, function () {
@@ -258,11 +213,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return [];
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addYamlAdapter(Container $container): Container
     {
         $container->set(static::ADAPTER_YAML, function () {
@@ -272,11 +222,6 @@ class GlueStorefrontApiApplicationDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addLocaleService(Container $container): Container
     {
         $container->set(static::SERVICE_LOCALE, function (Container $container) {

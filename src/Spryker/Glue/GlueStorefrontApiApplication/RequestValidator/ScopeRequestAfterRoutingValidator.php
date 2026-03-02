@@ -22,12 +22,6 @@ class ScopeRequestAfterRoutingValidator implements RequestValidatorInterface
      */
     protected const MESSAGE_FORBIDDEN = 'Forbidden.';
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     * @param \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\GlueRequestValidationTransfer
-     */
     public function validate(
         GlueRequestTransfer $glueRequestTransfer,
         ResourceInterface $resource
@@ -57,9 +51,6 @@ class ScopeRequestAfterRoutingValidator implements RequestValidatorInterface
         return $this->createNotValidGlueRequestValidationTransfer();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\GlueRequestValidationTransfer
-     */
     protected function createNotValidGlueRequestValidationTransfer(): GlueRequestValidationTransfer
     {
         $glueErrorTransfer = (new GlueErrorTransfer())

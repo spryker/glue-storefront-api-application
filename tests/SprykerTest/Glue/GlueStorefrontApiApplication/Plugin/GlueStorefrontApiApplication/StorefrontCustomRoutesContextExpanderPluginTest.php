@@ -31,9 +31,6 @@ class StorefrontCustomRoutesContextExpanderPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandEmptyRouters(): void
     {
         //Arrange
@@ -52,9 +49,6 @@ class StorefrontCustomRoutesContextExpanderPluginTest extends Unit
         $this->assertEmpty($apiApplicationSchemaContextTransfer->getCustomRoutesContexts());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandWithRouters(): void
     {
         //Arrange

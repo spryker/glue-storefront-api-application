@@ -46,11 +46,6 @@ class StorefrontRouterProviderPlugin extends AbstractPlugin implements ApiApplic
         return 'GlueStorefrontApiApplication';
     }
 
-    /**
-     * @param \Symfony\Component\Routing\RouteCollection $routeCollection
-     *
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     protected function addCustomRoutesCollection(RouteCollection $routeCollection): RouteCollection
     {
         $routeProviderPlugins = $this->getFactory()->getRouteProviderPlugins();
@@ -61,11 +56,6 @@ class StorefrontRouterProviderPlugin extends AbstractPlugin implements ApiApplic
         return $routeCollection;
     }
 
-    /**
-     * @param \Symfony\Component\Routing\RouteCollection $routeCollection
-     *
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     protected function addResourceRoutesCollection(RouteCollection $routeCollection): RouteCollection
     {
         $resourcePlugins = $this->getFactory()->getResourcePlugins();

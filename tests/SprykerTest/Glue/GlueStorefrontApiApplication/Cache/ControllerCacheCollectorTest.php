@@ -52,9 +52,6 @@ class ControllerCacheCollectorTest extends Unit
      */
     protected const GLUE_STOREFRONT_API_APPLICATION = 'GLUE_STOREFRONT_API_APPLICATION';
 
-    /**
-     * @return void
-     */
     public function testCollectResourceRoutesShouldMapApiControllerConfigurationTransfersData(): void
     {
         //Arrange
@@ -76,9 +73,6 @@ class ControllerCacheCollectorTest extends Unit
         $this->assertArrayHasKey($key, $apiControllerConfigurationTransfersData[static::GLUE_STOREFRONT_API_APPLICATION]);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectCustomRoutesShouldMapApiControllerConfigurationTransfersData(): void
     {
         //Arrange
@@ -105,9 +99,6 @@ class ControllerCacheCollectorTest extends Unit
         $this->assertArrayHasKey($key, $apiControllerConfigurationTransfersData[static::GLUE_STOREFRONT_API_APPLICATION]);
     }
 
-    /**
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     protected function createFakeRouteCollection(): RouteCollection
     {
         $defaults = array_filter([

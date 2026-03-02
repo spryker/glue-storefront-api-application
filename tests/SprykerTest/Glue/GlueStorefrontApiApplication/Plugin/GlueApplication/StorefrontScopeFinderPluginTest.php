@@ -40,9 +40,6 @@ class StorefrontScopeFinderPluginTest extends Unit
      */
     protected const NOT_EXIST_SCOPE_NAME = 'test:scope';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class StorefrontScopeFinderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindScopeWillReturnNullBecauseInputScopeNotFound(): void
     {
         // Arrange
@@ -69,9 +63,6 @@ class StorefrontScopeFinderPluginTest extends Unit
         $this->assertNull($scopeIdentifier);
     }
 
-    /**
-     * @return void
-     */
     public function testFindScopeWillReturnInputScopeBecauseInputScopeFound(): void
     {
         // Arrange

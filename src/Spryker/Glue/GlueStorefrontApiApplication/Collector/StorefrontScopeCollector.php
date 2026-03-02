@@ -110,11 +110,6 @@ class StorefrontScopeCollector implements StorefrontScopeCollectorInterface
         return $scopes;
     }
 
-    /**
-     * @param string $scope
-     *
-     * @return \Generated\Shared\Transfer\OauthScopeFindTransfer
-     */
     protected function createOauthScopeFindTransfer(string $scope): OauthScopeFindTransfer
     {
         return (new OauthScopeFindTransfer())

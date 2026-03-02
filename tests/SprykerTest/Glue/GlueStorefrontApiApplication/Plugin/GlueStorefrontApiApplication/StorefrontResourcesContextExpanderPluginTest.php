@@ -33,9 +33,6 @@ class StorefrontResourcesContextExpanderPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandEmptyResources(): void
     {
         //Arrange
@@ -53,9 +50,6 @@ class StorefrontResourcesContextExpanderPluginTest extends Unit
         $this->assertEmpty($apiApplicationSchemaContextTransfer->getCustomRoutesContexts());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandWithResources(): void
     {
         //Arrange

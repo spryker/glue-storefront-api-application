@@ -15,11 +15,6 @@ use Symfony\Component\Routing\RouteCollection;
 
 class TestRouteProviderPlugin extends AbstractPlugin implements RouteProviderPluginInterface
 {
-    /**
-     * @param \Symfony\Component\Routing\RouteCollection $routeCollection
-     *
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {
         $route = (new Route('/get'))

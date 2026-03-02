@@ -198,17 +198,11 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
         return APPLICATION_SOURCE_DIR . static::GENERATED_FULL_FILE_NAME;
     }
 
-    /**
-     * @return string
-     */
     protected function getCorsAllowOrigin(): string
     {
         return $this->get(GlueStorefrontApiApplicationConstants::GLUE_STOREFRONT_CORS_ALLOW_ORIGIN, '');
     }
 
-    /**
-     * @return string|null
-     */
     protected function getCachePathIfCacheEnabled(): ?string
     {
         if ($this->get(GlueStorefrontApiApplicationConstants::GLUE_IS_CACHE_ENABLED, true)) {
@@ -218,9 +212,6 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
         return null;
     }
 
-    /**
-     * @return string
-     */
     protected function getDefaultRouterCachePath(): string
     {
         $projectNamespaces = implode('/', $this->get(GlueStorefrontApiApplicationConstants::PROJECT_NAMESPACES));
@@ -234,11 +225,6 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
         );
     }
 
-    /**
-     * @param array $securityHeaders
-     *
-     * @return array
-     */
     protected function addAccessControlAllowOriginHeader(array $securityHeaders): array
     {
         if ($this->getCorsAllowOrigin() === '') {

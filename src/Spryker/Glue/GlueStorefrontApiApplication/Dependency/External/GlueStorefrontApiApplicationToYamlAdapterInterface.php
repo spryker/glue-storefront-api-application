@@ -9,11 +9,5 @@ namespace Spryker\Glue\GlueStorefrontApiApplication\Dependency\External;
 
 interface GlueStorefrontApiApplicationToYamlAdapterInterface
 {
-    /**
-     * @param string $filename
-     * @param int $flags
-     *
-     * @return array
-     */
     public function parseFile(string $filename, int $flags = 0): array;
 }

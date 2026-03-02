@@ -49,9 +49,6 @@ class ResourceRouteBuilderTest extends Unit
      */
     protected const RESOURCE_METHOD_DELETE = 'delete';
 
-    /**
-     * @return void
-     */
     public function testBuilderReturnsNonEmptyRoutes(): void
     {
         //Arrange
@@ -65,9 +62,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotEmpty($routes);
     }
 
-    /**
-     * @return void
-     */
     public function testBuilderReturnsEmptyRoutes(): void
     {
         //Arrange
@@ -81,9 +75,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertEmpty($routes);
     }
 
-    /**
-     * @return void
-     */
     public function testGetMethodRouteIsGenerated(): void
     {
         //Arrange
@@ -98,9 +89,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotNull($routes[$methodKey]);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCoolectionMethodRouteIsGenerated(): void
     {
         //Arrange
@@ -115,9 +103,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotNull($routes[$methodKey]);
     }
 
-    /**
-     * @return void
-     */
     public function testPostMethodRouteIsGenerated(): void
     {
         //Arrange
@@ -132,9 +117,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotNull($routes[$methodKey]);
     }
 
-    /**
-     * @return void
-     */
     public function testPatchMethodRouteIsGenerated(): void
     {
         //Arrange
@@ -149,9 +131,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotNull($routes[$methodKey]);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMethodRouteIsGenerated(): void
     {
         //Arrange
@@ -166,12 +145,6 @@ class ResourceRouteBuilderTest extends Unit
         $this->assertNotNull($routes[$methodKey]);
     }
 
-    /**
-     * @param string $resourceType
-     * @param string $method
-     *
-     * @return string
-     */
     protected function getGeneratedMethodKey(string $resourceType, string $method): string
     {
         return sprintf(
@@ -182,25 +155,16 @@ class ResourceRouteBuilderTest extends Unit
         );
     }
 
-    /**
-     * @return \SprykerTest\Glue\GlueStorefrontApiApplication\Stub\TestResourceRouteProviderPlugin
-     */
     protected function createResourceRouterProviderPlugin(): TestResourceRouteProviderPlugin
     {
         return new TestResourceRouteProviderPlugin();
     }
 
-    /**
-     * @return \SprykerTest\Glue\GlueStorefrontApiApplication\Stub\TestResourceEmptyMethodsRouteProviderPlugin
-     */
     protected function createResourceEmptyMethodsRouterProviderPlugin(): TestResourceEmptyMethodsRouteProviderPlugin
     {
         return new TestResourceEmptyMethodsRouteProviderPlugin();
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\ResourceRouteBuilder\ResourceRouteBuilder
-     */
     protected function createResourceRouteBuilder(): ResourceRouteBuilder
     {
         return new ResourceRouteBuilder();

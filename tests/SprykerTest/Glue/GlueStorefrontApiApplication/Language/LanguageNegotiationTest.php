@@ -181,11 +181,6 @@ class LanguageNegotiationTest extends Unit
         return (new StoreTransfer())->setAvailableLocaleIsoCodes($availableLocaleIsoCodes);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AcceptLanguageTransfer|null $foundAcceptLanguage
-     *
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Dependency\Service\GlueStorefrontApiApplicationToLocaleServiceInterface
-     */
     protected function createLocaleServiceMock(?AcceptLanguageTransfer $foundAcceptLanguage): GlueStorefrontApiApplicationToLocaleServiceInterface
     {
         $localeServiceMock = $this->getMockBuilder(GlueStorefrontApiApplicationToLocaleServiceInterface::class)->getMock();

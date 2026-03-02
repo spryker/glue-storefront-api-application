@@ -37,10 +37,6 @@ class StorefrontScopeFinder implements StorefrontScopeFinderInterface
      */
     protected $yamlAdapter;
 
-    /**
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\GlueStorefrontApiApplicationConfig $config
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\Dependency\External\GlueStorefrontApiApplicationToYamlAdapterInterface $yamlAdapter
-     */
     public function __construct(
         GlueStorefrontApiApplicationConfig $config,
         GlueStorefrontApiApplicationToYamlAdapterInterface $yamlAdapter

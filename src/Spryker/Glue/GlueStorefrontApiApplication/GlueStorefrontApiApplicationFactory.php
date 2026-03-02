@@ -48,9 +48,6 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::PLUGINS_APPLICATIONS);
     }
 
-    /**
-     * @return \Spryker\Shared\Application\ApplicationInterface
-     */
     public function createGlueStorefrontApiApplication(): ApplicationInterface
     {
         static $applicationCache = null;
@@ -61,17 +58,11 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Service\Container\ContainerInterface
-     */
     public function createServiceContainer(): ContainerInterface
     {
         return new ContainerProxy(['logger' => null, 'debug' => $this->getConfig()->isDebugModeEnabled(), 'charset' => 'UTF-8']);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\RequestBuilder\LocaleRequestBuilderInterface
-     */
     public function createLocaleRequestBuilder(): LocaleRequestBuilderInterface
     {
         return new LocaleRequestBuilder(
@@ -79,17 +70,11 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Language\LanguageNegotiationInterface
-     */
     public function createLanguageNegotiation(): LanguageNegotiationInterface
     {
         return new LanguageNegotiation($this->getStoreClient(), $this->getLocaleService());
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Cache\ControllerCacheCollectorInterface
-     */
     public function createControllerCacheCollector(): ControllerCacheCollectorInterface
     {
         return new ControllerCacheCollector(
@@ -106,9 +91,6 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::PLUGINS_ROUTE_PROVIDER);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Dependency\Client\GlueStorefrontApiApplicationToStoreClientInterface
-     */
     public function getStoreClient(): GlueStorefrontApiApplicationToStoreClientInterface
     {
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::CLIENT_STORE);
@@ -154,17 +136,11 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::PLUGINS_RESPONSE_FORMATTER);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\RequestValidator\RequestValidatorInterface
-     */
     public function createRequestCorsValidator(): RequestValidatorInterface
     {
         return new RequestCorsValidator($this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Collector\StorefrontScopeCollectorInterface
-     */
     public function createStorefrontScopeCollector(): StorefrontScopeCollectorInterface
     {
         return new StorefrontScopeCollector(
@@ -174,17 +150,11 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Dependency\External\GlueStorefrontApiApplicationToYamlAdapterInterface
-     */
     public function getYamlAdapter(): GlueStorefrontApiApplicationToYamlAdapterInterface
     {
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::ADAPTER_YAML);
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Finder\StorefrontScopeFinderInterface
-     */
     public function createStorefrontScopeFinder(): StorefrontScopeFinderInterface
     {
         return new StorefrontScopeFinder(
@@ -193,49 +163,31 @@ class GlueStorefrontApiApplicationFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\RequestValidator\RequestValidatorInterface
-     */
     public function createScopeRequestAfterRoutingValidator(): RequestValidatorInterface
     {
         return new ScopeRequestAfterRoutingValidator();
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Expander\ContextExpanderInterface
-     */
     public function createResourcesContextExpander(): ContextExpanderInterface
     {
         return new ResourcesContextExpander($this->getResourcePlugins());
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Expander\ContextExpanderInterface
-     */
     public function createCustomRoutesContextExpander(): ContextExpanderInterface
     {
         return new CustomRoutesContextExpander($this->getRouteProviderPlugins());
     }
 
-    /**
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     public function createRouteCollection(): RouteCollection
     {
         return new RouteCollection();
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\ResourceRouteBuilder\ResourceRouteBuilderInterface
-     */
     public function createResourceRouteBuilder(): ResourceRouteBuilderInterface
     {
         return new ResourceRouteBuilder();
     }
 
-    /**
-     * @return \Spryker\Glue\GlueStorefrontApiApplication\Dependency\Service\GlueStorefrontApiApplicationToLocaleServiceInterface
-     */
     public function getLocaleService(): GlueStorefrontApiApplicationToLocaleServiceInterface
     {
         return $this->getProvidedDependency(GlueStorefrontApiApplicationDependencyProvider::SERVICE_LOCALE);

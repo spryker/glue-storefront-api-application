@@ -35,9 +35,6 @@ class SecurityHeaderResponseFormatterPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testMataHaveAccessControlAllowOriginHeaderAsAsterisk(): void
     {
         // Arrange
@@ -61,9 +58,6 @@ class SecurityHeaderResponseFormatterPluginTest extends Unit
         $this->assertSame('*', $metaArray[static::HEADER_ACCESS_CONTROL_ALLOW_ORIGIN]);
     }
 
-    /**
-     * @return void
-     */
     public function testMataHaveAccessControlAllowOriginHeaderAsNull(): void
     {
         // Arrange
@@ -87,9 +81,6 @@ class SecurityHeaderResponseFormatterPluginTest extends Unit
         $this->assertSame('null', $metaArray[static::HEADER_ACCESS_CONTROL_ALLOW_ORIGIN]);
     }
 
-    /**
-     * @return void
-     */
     public function testMataHaveAccessControlAllowOriginHeaderAsUrl(): void
     {
         // Arrange

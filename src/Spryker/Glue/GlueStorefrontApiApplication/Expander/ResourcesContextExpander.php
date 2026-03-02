@@ -37,11 +37,6 @@ class ResourcesContextExpander implements ContextExpanderInterface
         $this->resourcePlugins = $resourcePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiApplicationSchemaContextTransfer $apiApplicationSchemaContextTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiApplicationSchemaContextTransfer
-     */
     public function expand(ApiApplicationSchemaContextTransfer $apiApplicationSchemaContextTransfer): ApiApplicationSchemaContextTransfer
     {
         foreach ($this->resourcePlugins as $resourcePlugin) {

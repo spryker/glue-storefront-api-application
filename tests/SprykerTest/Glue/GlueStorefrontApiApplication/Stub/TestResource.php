@@ -20,25 +20,16 @@ class TestResource extends AbstractResourcePlugin implements JsonApiResourceInte
      */
     protected const RESOURCE_NAME = 'test';
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return static::RESOURCE_NAME;
     }
 
-    /**
-     * @return string
-     */
     public function getController(): string
     {
         return ResourceController::class;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\GlueResourceMethodCollectionTransfer
-     */
     public function getDeclaredMethods(): GlueResourceMethodCollectionTransfer
     {
         return (new GlueResourceMethodCollectionTransfer())

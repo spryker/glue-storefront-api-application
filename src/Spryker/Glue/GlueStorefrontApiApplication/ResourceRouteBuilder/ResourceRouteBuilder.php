@@ -91,14 +91,6 @@ class ResourceRouteBuilder implements ResourceRouteBuilderInterface
         return $routes;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueResourceMethodConfigurationTransfer $declaredMethodTransfer
-     * @param string $resourceController
-     * @param string $path
-     * @param string $httpMethod
-     *
-     * @return \Symfony\Component\Routing\Route
-     */
     protected function buildRoute(
         GlueResourceMethodConfigurationTransfer $declaredMethodTransfer,
         string $resourceController,
@@ -116,12 +108,6 @@ class ResourceRouteBuilder implements ResourceRouteBuilderInterface
             ->setDefault(static::DEFAULTS_METHOD, $httpMethod);
     }
 
-    /**
-     * @param string $resourceType
-     * @param string $declaredMethod
-     *
-     * @return string
-     */
     protected function getResourceMethodPath(string $resourceType, string $declaredMethod): string
     {
         if (in_array($declaredMethod, static::RESOURCE_ID_METHODS)) {
@@ -131,11 +117,6 @@ class ResourceRouteBuilder implements ResourceRouteBuilderInterface
         return sprintf(static::FORMAT_RESOURCE_PATH, $resourceType);
     }
 
-    /**
-     * @param string $declaredMethod
-     *
-     * @return string
-     */
     protected function getHttpMethod(string $declaredMethod): string
     {
         if (!isset(static::ACTION_METHOD_MAP[$declaredMethod])) {

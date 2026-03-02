@@ -26,9 +26,6 @@ use Spryker\Shared\Application\ApplicationInterface;
  */
 class GlueStorefrontApiApplicationPluginTest extends Unit
 {
-    /**
-     * @return void
-     */
     public function testIfApplicationIsServing(): void
     {
         $glueStorefrontApiApplication = new StorefrontApiGlueApplicationBootstrapPlugin();
@@ -36,9 +33,6 @@ class GlueStorefrontApiApplicationPluginTest extends Unit
         $this->assertFalse($glueStorefrontApiApplication->isServing(new GlueApiContextTransfer()));
     }
 
-    /**
-     * @return void
-     */
     public function testRunWillCreateApplication(): void
     {
         $applicationMock = $this->createMock(ApplicationInterface::class);

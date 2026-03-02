@@ -9,10 +9,5 @@ namespace Spryker\Glue\GlueStorefrontApiApplication\Language;
 
 interface LanguageNegotiationInterface
 {
-    /**
-     * @param string $acceptLanguage
-     *
-     * @return string
-     */
     public function getLanguageIsoCode(string $acceptLanguage): string;
 }

@@ -41,11 +41,6 @@ class CustomRoutesContextExpander implements ContextExpanderInterface
         $this->routeProviderPlugins = $routeProviderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiApplicationSchemaContextTransfer $apiApplicationSchemaContextTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiApplicationSchemaContextTransfer
-     */
     public function expand(ApiApplicationSchemaContextTransfer $apiApplicationSchemaContextTransfer): ApiApplicationSchemaContextTransfer
     {
         $routeCollection = $this->getRouteCollection();
@@ -100,9 +95,6 @@ class CustomRoutesContextExpander implements ContextExpanderInterface
         return $result;
     }
 
-    /**
-     * @return \Symfony\Component\Routing\RouteCollection
-     */
     protected function getRouteCollection(): RouteCollection
     {
         $routeCollection = new RouteCollection();

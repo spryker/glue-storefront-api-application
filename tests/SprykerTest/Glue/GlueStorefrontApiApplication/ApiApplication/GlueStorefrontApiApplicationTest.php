@@ -28,9 +28,6 @@ use Spryker\Glue\GlueStorefrontApiApplication\GlueStorefrontApiApplicationFactor
  */
 class GlueStorefrontApiApplicationTest extends Unit
 {
-    /**
-     * @return void
-     */
     public function testBuildRequestRunsPluginsAndReturnsGlueRequestTransfer(): void
     {
         $requestBuilderPluginMock = $this->createMock(RequestBuilderPluginInterface::class);
@@ -52,9 +49,6 @@ class GlueStorefrontApiApplicationTest extends Unit
         $this->assertEquals($this->createRequestValidatorPluginMocks(), $actualRequestValidatorPlugins);
     }
 
-    /**
-     * @return void
-     */
     public function testValidateRequestAfterRoutingRunsPluginsTillFirstFailingAndReturnsGlueRequestValidationTransfer(): void
     {
         $glueStorefrontApiApplicationMock = $this->createGlueStorefrontApiApplicationMock('getRequestAfterRoutingValidatorPlugins', $this->createRequestValidatorAfterRoutingPluginMocks());
@@ -63,9 +57,6 @@ class GlueStorefrontApiApplicationTest extends Unit
         $this->assertEquals($this->createRequestValidatorAfterRoutingPluginMocks(), $actualRequestAfterRoutingValidatorPlugins);
     }
 
-    /**
-     * @return void
-     */
     public function testFormatResponseRunsPluginsAndReturnsGlueRequestTransfer(): void
     {
         $responseFormatterPluginMock = $this->createMock(ResponseFormatterPluginInterface::class);

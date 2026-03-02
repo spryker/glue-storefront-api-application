@@ -18,9 +18,6 @@ use Symfony\Component\HttpFoundation\Session\Session;
  */
 class GlueStorefrontApiApplication extends RequestFlowAwareApiApplication
 {
-    /**
-     * @return \Spryker\Shared\Application\ApplicationInterface
-     */
     public function boot(): ApplicationInterface
     {
         $this->setUpSession();
@@ -76,9 +73,6 @@ class GlueStorefrontApiApplication extends RequestFlowAwareApiApplication
         return $this->getFactory()->getResponseFormatterPlugins();
     }
 
-    /**
-     * @return void
-     */
     protected function setUpSession(): void
     {
         (new SessionClient())->setContainer(

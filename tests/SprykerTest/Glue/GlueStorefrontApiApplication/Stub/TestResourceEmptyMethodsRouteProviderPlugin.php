@@ -13,9 +13,6 @@ use Spryker\Glue\GlueJsonApiConventionExtension\Dependency\Plugin\JsonApiResourc
 
 class TestResourceEmptyMethodsRouteProviderPlugin extends AbstractResourcePlugin implements JsonApiResourceInterface
 {
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return 'test';
@@ -31,9 +28,6 @@ class TestResourceEmptyMethodsRouteProviderPlugin extends AbstractResourcePlugin
         return ResourceController::class;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\GlueResourceMethodCollectionTransfer
-     */
     public function getDeclaredMethods(): GlueResourceMethodCollectionTransfer
     {
         return new GlueResourceMethodCollectionTransfer();

@@ -22,10 +22,6 @@ class LanguageNegotiation implements LanguageNegotiationInterface
      */
     protected GlueStorefrontApiApplicationToLocaleServiceInterface $localeService;
 
-    /**
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\Dependency\Client\GlueStorefrontApiApplicationToStoreClientInterface $storeClient
-     * @param \Spryker\Glue\GlueStorefrontApiApplication\Dependency\Service\GlueStorefrontApiApplicationToLocaleServiceInterface $localeService
-     */
     public function __construct(
         GlueStorefrontApiApplicationToStoreClientInterface $storeClient,
         GlueStorefrontApiApplicationToLocaleServiceInterface $localeService
@@ -34,11 +30,6 @@ class LanguageNegotiation implements LanguageNegotiationInterface
         $this->localeService = $localeService;
     }
 
-    /**
-     * @param string $acceptLanguage
-     *
-     * @return string
-     */
     public function getLanguageIsoCode(string $acceptLanguage): string
     {
         $storeTransfer = $this->storeClient->getCurrentStore();
@@ -80,11 +71,6 @@ class LanguageNegotiation implements LanguageNegotiationInterface
         return $indexedLocaleCodes;
     }
 
-    /**
-     * @param string $localeCode
-     *
-     * @return string
-     */
     protected function extractLanguageCode(string $localeCode): string
     {
         $localeCodeParts = explode('_', $localeCode);

@@ -170,11 +170,6 @@ class ControllerCacheCollector implements ControllerCacheCollectorInterface
         return $apiControllerConfigurationTransfersData;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiControllerConfigurationTransfer $apiControllerConfigurationTransfer
-     *
-     * @return string
-     */
     protected function generateCacheKey(ApiControllerConfigurationTransfer $apiControllerConfigurationTransfer): string
     {
         return sprintf(

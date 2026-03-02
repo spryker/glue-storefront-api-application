@@ -33,9 +33,6 @@ class ScopeRequestAfterRoutingValidatorPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testValidateRequestWillReturnValidResponseForResourceWitchNotImplementScopeDefinitionPluginInterface(): void
     {
         // Arrange
@@ -52,9 +49,6 @@ class ScopeRequestAfterRoutingValidatorPluginTest extends Unit
         $this->assertTrue($glueRequestValidationTransfer->getIsValid());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateRequestWillReturnNotValidGlueRequestValidationTransfer(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class ScopeRequestAfterRoutingValidatorPluginTest extends Unit
         $this->assertSame(Response::HTTP_FORBIDDEN, $glueRequestValidationTransfer->getStatus());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateRequestWillReturnValidGlueRequestValidationTransfer(): void
     {
         // Arrange
@@ -88,9 +79,6 @@ class ScopeRequestAfterRoutingValidatorPluginTest extends Unit
         $this->assertTrue($glueRequestValidationTransfer->getIsValid());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\GlueRequestTransfer
-     */
     protected function createGlueRequestTransfer(): GlueRequestTransfer
     {
         return (new GlueRequestTransfer())->setRequestCustomer(

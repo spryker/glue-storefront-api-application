@@ -38,9 +38,6 @@ class StorefrontScopeCollectorPluginTest extends Unit
      */
     protected const GLUE_STOREFRONT_API_APPLICATION_NAME = 'storefront';
 
-    /**
-     * @return void
-     */
     public function testProvideScopesWillReturnEmptyArrayOfScopes(): void
     {
         // Arrange
@@ -53,9 +50,6 @@ class StorefrontScopeCollectorPluginTest extends Unit
         $this->assertEmpty($scopes);
     }
 
-    /**
-     * @return void
-     */
     public function testProvideScopesWillReturnArrayOfOauthScopeFindTransferWithScopeData(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class StorefrontScopeCollectorPluginTest extends Unit
         $this->assertSame($this->tester::GET_METHOD_SCOPE, $scopes[0]->getIdentifier());
     }
 
-    /**
-     * @return void
-     */
     protected function setDependency(): void
     {
         $this->tester->setDependency(

@@ -11,12 +11,6 @@ use Symfony\Component\Yaml\Yaml;
 
 class GlueStorefrontApiApplicationToYamlAdapter implements GlueStorefrontApiApplicationToYamlAdapterInterface
 {
-    /**
-     * @param string $filename
-     * @param int $flags
-     *
-     * @return array
-     */
     public function parseFile(string $filename, int $flags = 0): array
     {
         return Yaml::parseFile($filename, $flags);
