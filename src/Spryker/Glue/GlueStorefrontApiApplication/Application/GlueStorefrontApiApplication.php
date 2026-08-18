@@ -7,24 +7,13 @@
 
 namespace Spryker\Glue\GlueStorefrontApiApplication\Application;
 
-use Spryker\Client\Session\SessionClient;
 use Spryker\Glue\GlueApplication\ApiApplication\Type\RequestFlowAwareApiApplication;
-use Spryker\Glue\GlueApplication\Session\Storage\MockArraySessionStorage;
-use Spryker\Shared\Application\ApplicationInterface;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * @method \Spryker\Glue\GlueStorefrontApiApplication\GlueStorefrontApiApplicationFactory getFactory()
  */
 class GlueStorefrontApiApplication extends RequestFlowAwareApiApplication
 {
-    public function boot(): ApplicationInterface
-    {
-        $this->setUpSession();
-
-        return parent::boot();
-    }
-
     /**
      * {@inheritDoc}
      *
@@ -71,14 +60,5 @@ class GlueStorefrontApiApplication extends RequestFlowAwareApiApplication
     public function provideResponseFormatterPlugins(): array
     {
         return $this->getFactory()->getResponseFormatterPlugins();
-    }
-
-    protected function setUpSession(): void
-    {
-        (new SessionClient())->setContainer(
-            new Session(
-                new MockArraySessionStorage(),
-            ),
-        );
     }
 }
