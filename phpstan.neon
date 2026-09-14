@@ -3,3 +3,5 @@ parameters:
         -
             identifier: missingType.iterableValue
     level: 8
+    # A @phpstan-ignore only matches under the default deps, not --prefer-lowest (non-ignorable otherwise).
+    reportUnmatchedIgnoredErrors: false

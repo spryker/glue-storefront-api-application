@@ -13,6 +13,7 @@ class GlueStorefrontApiApplicationToYamlAdapter implements GlueStorefrontApiAppl
 {
     public function parseFile(string $filename, int $flags = 0): array
     {
+        // @phpstan-ignore argument.type (flags is a bitmask of Yaml::PARSE_* constants; phpstan-symfony's stub enumerates only the valid combinations, which int can't statically express)
         return Yaml::parseFile($filename, $flags);
     }
 }
