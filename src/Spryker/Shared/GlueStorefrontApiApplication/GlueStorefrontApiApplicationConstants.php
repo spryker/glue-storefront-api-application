@@ -69,4 +69,13 @@ interface GlueStorefrontApiApplicationConstants
      * @var string
      */
     public const GLUE_STOREFRONT_CORS_ALLOW_ORIGIN = 'GLUE_STOREFRONT_API_APPLICATION:GLUE_STOREFRONT_CORS_ALLOW_ORIGIN';
+
+    /**
+     * Specification:
+     * - Public base URL of the Storefront API, with scheme and port, for example `https://glue-storefront.example.com`.
+     * - Used for the MCP server card and the API catalog.
+     *
+     * @api
+     */
+    public const string GLUE_STOREFRONT_API_BASE_URL = 'GLUE_STOREFRONT_API_APPLICATION:GLUE_STOREFRONT_API_BASE_URL';
 }

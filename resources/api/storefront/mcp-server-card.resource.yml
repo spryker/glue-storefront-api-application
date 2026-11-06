@@ -1,0 +1,46 @@
+resource:
+    name: McpServerCard
+    shortName: mcp-server-card
+    description: 'Server cards (MCP Server Card extension) of the MCP servers of the Storefront API, as plain JSON.'
+    provider: Spryker\Glue\GlueStorefrontApiApplication\Api\Storefront\Provider\McpServerCardStorefrontProvider
+    paginationEnabled: false
+
+    operations:
+        - type: Get
+          uriTemplate: '/.well-known/mcp/server-card.json'
+          deserialize: false
+          normalizationContext:
+              gen_id: false
+          openapiContext:
+              summary: 'Returns the server card of the default MCP server'
+              responses:
+                  200:
+                      description: 'The server card, media type application/mcp-server-card+json.'
+                  304:
+                      description: 'The server card did not change since the ETag of the If-None-Match header.'
+                  404:
+                      description: 'No MCP server is configured.'
+
+        - type: Get
+          name: getMcpServerCardByServerKey
+          uriTemplate: '/.well-known/mcp/{serverKey}/server-card.json'
+          deserialize: false
+          normalizationContext:
+              gen_id: false
+          openapiContext:
+              summary: 'Returns the server card of the MCP server with the given configuration key'
+              responses:
+                  200:
+                      description: 'The server card, media type application/mcp-server-card+json.'
+                  304:
+                      description: 'The server card did not change since the ETag of the If-None-Match header.'
+                  404:
+                      description: 'No MCP server with this configuration key is configured.'
+
+    properties:
+        serverKey:
+            type: string
+            writable: false
+            readable: true
+            identifier: true
+            description: 'Documentation only; the provider answers with the server card document itself.'

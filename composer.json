@@ -4,6 +4,7 @@
     "description": "GlueStorefrontApiApplication module",
     "license": "proprietary",
     "require": {
+        "mcp/sdk": "^0.8.1 || ^0.9",
         "php": ">=8.3",
         "spryker/application": "^3.28.0",
         "spryker/container": "^1.4.5",
@@ -18,9 +19,13 @@
         "spryker/transfer": "^3.27.0"
     },
     "require-dev": {
+        "spryker/api-platform": "*",
         "spryker/code-sniffer": "*",
         "spryker/glue-json-api-convention-extension": "*",
         "spryker/testify": "*"
+    },
+    "suggest": {
+        "spryker/api-platform": "Required to serve the MCP discovery documents."
     },
     "autoload": {
         "psr-4": {

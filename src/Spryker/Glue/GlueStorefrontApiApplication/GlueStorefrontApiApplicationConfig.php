@@ -86,6 +86,8 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
      */
     protected const HEADER_NAME_ACCESS_CONTROL_ALLOW_ORIGIN = 'Access-Control-Allow-Origin';
 
+    protected const string DEFAULT_URL_SCHEME = 'https';
+
     /**
      * Specification:
      * - Returns the host that the Storefront API application serves
@@ -225,6 +227,11 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
         );
     }
 
+    /**
+     * @param array<string, string> $securityHeaders
+     *
+     * @return array<string, string>
+     */
     protected function addAccessControlAllowOriginHeader(array $securityHeaders): array
     {
         if ($this->getCorsAllowOrigin() === '') {
@@ -234,5 +241,42 @@ class GlueStorefrontApiApplicationConfig extends AbstractBundleConfig
         $securityHeaders[static::HEADER_NAME_ACCESS_CONTROL_ALLOW_ORIGIN] = $this->getCorsAllowOrigin();
 
         return $securityHeaders;
+    }
+
+    /**
+     * Specification:
+     * - Returns the public base URL of the Storefront API without a trailing slash.
+     * - Falls back to `https://` and the Storefront API host when no base URL is configured.
+     *
+     * @api
+     */
+    public function getStorefrontApiBaseUrl(): string
+    {
+        $baseUrl = (string)$this->get(GlueStorefrontApiApplicationConstants::GLUE_STOREFRONT_API_BASE_URL, '');
+
+        if ($baseUrl !== '') {
+            return rtrim($baseUrl, '/');
+        }
+
+        return sprintf('%s://%s', static::DEFAULT_URL_SCHEME, $this->getStorefrontApiApplicationHost());
+    }
+
+    /**
+     * Specification:
+     * - Returns the host names that the MCP endpoint accepts in the `Host` header (DNS rebinding protection).
+     * - Contains the Storefront API host and the host of the Storefront API base URL.
+     *
+     * @api
+     *
+     * @return list<string>
+     */
+    public function getMcpAllowedHosts(): array
+    {
+        $hosts = [
+            $this->getStorefrontApiApplicationHost(),
+            (string)parse_url($this->getStorefrontApiBaseUrl(), PHP_URL_HOST),
+        ];
+
+        return array_values(array_unique(array_filter($hosts)));
     }
 }

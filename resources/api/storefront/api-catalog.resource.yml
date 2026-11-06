@@ -1,0 +1,29 @@
+resource:
+    name: ApiCatalog
+    shortName: api-catalog
+    description: 'API catalog (RFC 9727) of the Storefront API host as an RFC 9264 linkset, as plain JSON.'
+    provider: Spryker\Glue\GlueStorefrontApiApplication\Api\Storefront\Provider\ApiCatalogStorefrontProvider
+    paginationEnabled: false
+
+    operations:
+        - type: Get
+          uriTemplate: '/.well-known/api-catalog'
+          deserialize: false
+          normalizationContext:
+              gen_id: false
+          openapiContext:
+              summary: 'Returns the API catalog of the Storefront API host'
+              responses:
+                  200:
+                      description: 'The linkset, media type application/linkset+json with the RFC 9727 profile.'
+                  304:
+                      description: 'The API catalog did not change since the ETag of the If-None-Match header.'
+                  404:
+                      description: 'No MCP server is configured.'
+
+    properties:
+        linkset:
+            type: array
+            writable: false
+            readable: true
+            description: 'Documentation only; the provider answers with the linkset document itself.'
